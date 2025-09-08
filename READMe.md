@@ -1,4 +1,4 @@
-# exercise number one
+# Initiliazing your environment and missing file fix
 ```bash YOGA@AJAH MINGW64 ~/gitadvanced (master)
 $ git remote add origin https://github.com/ajah-ac/gitaddvancedexercises.git
 
@@ -16,7 +16,9 @@ git add test3.md && git commit -m "chore: Create third and fourth files"
 [master c728a60] chore: Create third and fourth files
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 test3.md
-
+```
+# Missing file fix
+```bash
 
 YOGA@AJAH MINGW64 ~/gitadvanced (master)
 $ git status
