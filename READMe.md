@@ -1,5 +1,4 @@
 # Initiliazing your environment and missing file fix
-# Initiliazing your environment and missing file fix
 ```bash YOGA@AJAH MINGW64 ~/gitadvanced (master)
 $ git remote add origin https://github.com/ajah-ac/gitaddvancedexercises.git
 
@@ -17,9 +16,6 @@ git add test3.md && git commit -m "chore: Create third and fourth files"
 [master c728a60] chore: Create third and fourth files
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 test3.md
-```
-# 1. Missing file fix
-```bash
 ```
 # 1. Missing file fix
 ```bash
@@ -45,7 +41,6 @@ $ git add test4.md && git commit -m 'chore:creating four file'
  create mode 100644 test4.md
 ```
 ## 2.Editing commit history
-## 2.Editing commit history
 ```bash 
 
 YOGA@AJAH MINGW64 ~/gitadvanced (master)
@@ -68,7 +63,6 @@ Successfully rebased and updated refs/heads/master.
 ```
 
 
-## 3.squasing second file into intial file
 ## 3.squasing second file into intial file
 ```bash YOGA@AJAH MINGW64 ~/gitadvanced (master)
 $ git rebase -i HEAD~4
@@ -123,7 +117,6 @@ Date:   Fri Sep 5 14:40:38 2025 +0200
 :
 ```
 
-# 4 Splitting a commit
 # 4 Splitting a commit
 ```bash YOGA@AJAH MINGW64 ~/gitadvanced (master)
 YOGA@AJAH MINGW64 ~/gitadvanced (master)
