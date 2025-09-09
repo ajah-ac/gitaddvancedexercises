@@ -312,4 +312,3 @@ $ git add test5.md && git commit -m 'Implemented test 5'
  create mode 100644 test5.md
 =======
 YOGA@AJAH MINGW64 ~/gitadvanced (master) ```
->>>>>>> 614845a5b46981081374b5e2848db0bd73c07b0e
