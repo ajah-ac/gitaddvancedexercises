@@ -545,4 +545,64 @@ $ git add readme.txt && git commit -m 'Updating project readme'
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 readme.txt
 ```
+# 4.Local vs. Remote Branches:
+```bash
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git remote -v
+origin  https://github.com/ajah-ac/gitaddvancedexercises.git (fetch)
+origin  https://github.com/ajah-ac/gitaddvancedexercises.git (push)
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git branch -r
+  origin/master
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git branch -a
+  ft/branch
+  ft/new-feature
+* master
+  my-temp-branch
+  remotes/origin/master
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git push -u origin ft/new-feature
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 1.87 KiB | 639.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/new-feature' on GitHub by visiting:
+remote:      https://github.com/ajah-ac/gitaddvancedexercises/pull/new/ft/new-feature
+remote:
+To https://github.com/ajah-ac/gitaddvancedexercises.git
+ * [new branch]      ft/new-feature -> ft/new-feature
+branch 'ft/new-feature' set up to track 'origin/ft/new-feature'.
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git pull
+Already up to date.
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git fetch
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git pull
+Already up to date.
+```
+# 5.Branch deletion
+```bash
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git branch -d ft/new-feature
+warning: deleting branch 'ft/new-feature' that has been merged to
+         'refs/remotes/origin/ft/new-feature', but not yet merged to HEAD
+Deleted branch ft/new-feature (was 01a3b21).
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$
+```
 
