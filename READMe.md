@@ -520,7 +520,9 @@ $
 YOGA@AJAH MINGW64 ~/gitadvanced ((f7980c5...))
 $ git checkout -b 'ft/new-feature'
 Switched to a new branch 'ft/new-feature'
-
+```
+# 2.Working on the Feature Branch:
+```bash
 YOGA@AJAH MINGW64 ~/gitadvanced (ft/new-feature)
 $ git add feature.txt && git commit -m 'Implemented core functionality for new feature'
 [ft/new-feature 74378c4] Implemented core functionality for new feature
@@ -530,3 +532,17 @@ $ git add feature.txt && git commit -m 'Implemented core functionality for new f
 YOGA@AJAH MINGW64 ~/gitadvanced (ft/new-feature)
 $
 ```
+# 3.Switching Back and Making More Changes:
+```bash
+YOGA@AJAH MINGW64 ~/gitadvanced (ft/new-feature)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git add readme.txt && git commit -m 'Updating project readme'
+[master 301ab84] Updating project readme
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 readme.txt
+```
+
