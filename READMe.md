@@ -545,4 +545,146 @@ $ git add readme.txt && git commit -m 'Updating project readme'
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 readme.txt
 ```
+# 4.Local vs. Remote Branches:
+```bash
 
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git remote -v
+origin  https://github.com/ajah-ac/gitaddvancedexercises.git (fetch)
+origin  https://github.com/ajah-ac/gitaddvancedexercises.git (push)
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git branch -r
+  origin/master
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git branch -a
+  ft/branch
+  ft/new-feature
+* master
+  my-temp-branch
+  remotes/origin/master
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git push -u origin ft/new-feature
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 1.87 KiB | 639.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/new-feature' on GitHub by visiting:
+remote:      https://github.com/ajah-ac/gitaddvancedexercises/pull/new/ft/new-feature
+remote:
+To https://github.com/ajah-ac/gitaddvancedexercises.git
+ * [new branch]      ft/new-feature -> ft/new-feature
+branch 'ft/new-feature' set up to track 'origin/ft/new-feature'.
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git pull
+Already up to date.
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git fetch
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git pull
+Already up to date.
+```
+# 5.Branch deletion
+```bash
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git branch -d ft/new-feature
+warning: deleting branch 'ft/new-feature' that has been merged to
+         'refs/remotes/origin/ft/new-feature', but not yet merged to HEAD
+Deleted branch ft/new-feature (was 01a3b21).
+
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$
+```
+# 6.Creating a branch from a commit
+
+```bash
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git log --oneline
+87e9e00 (HEAD -> master) Updating readme
+4a6867e (origin/master) Updating readme
+301ab84 Updating project readme
+57aaf64 Updating readme
+122b59d Merge branch 'master' of https://github.com/ajah-ac/gitaddvancedexercises
+7107b05 Updating Readme
+0b5a597 updating readme
+69b39ac chore:creating four file
+d99e3f9 chore: Create third and fourth files
+8d3b1da chore:CReat initial and second file
+c104f99 exercise 3
+18b0f94 chore:creating four file
+8a468a4 chore: Create third and fourth files
+4463f14 exercise 3
+614845a  updating readme
+f3bada5 updating readme
+65cd9d2 unwanted text
+YOGA@AJAH MINGW64 ~/gitadvanced (master)
+$ git checkout -b ft/new-branch-from-commit 57aaf64
+Switched to a new branch 'ft/new-branch-from-commit'
+
+YOGA@AJAH MINGW64 ~/gitadvanced (ft/new-branch-from-commit)
+$ git log --oneline
+57aaf64 (HEAD -> ft/new-branch-from-commit) Updating readme
+122b59d Merge branch 'master' of https://github.com/ajah-ac/gitaddvancedexercises
+7107b05 Updating Readme
+0b5a597 updating readme
+69b39ac chore:creating four file
+d99e3f9 chore: Create third and fourth files
+8d3b1da chore:CReat initial and second file
+c104f99 exercise 3
+18b0f94 chore:creating four file
+8a468a4 chore: Create third and fourth files
+4463f14 exercise 3
+614845a  updating readme
+f3bada5 updating readme
+65cd9d2 unwanted text
+0924bb2 exercise 4
+476f96c exercise 4
+72c4b05 Chore: create four file
+```
+# 7. Branch merging
+```bash
+YOGA@AJAH MINGW64 ~/gitadvanced (ft/new-branch-from-commit)
+$ git checkout main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+
+YOGA@AJAH MINGW64 ~/gitadvanced (main)
+$ git merge ft/new-branch-from-commit
+Already up to date.
+
+YOGA@AJAH MINGW64 ~/gitadvanced (main)
+$ git log --oneline --graph --all
+* 87e9e00 (HEAD -> main, origin/main) Updating readme
+* 4a6867e (origin/master) Updating readme
+* 301ab84 Updating project readme
+* 57aaf64 (ft/new-branch-from-commit) Updating readme
+*   122b59d Merge branch 'master' of https://github.com/ajah-ac/gitaddvancedexercises
+|\
+| * 614845a  updating readme
+* | 7107b05 Updating Readme
+| | * 01a3b21 (origin/ft/new-feature) Updating readme
+| | * 74378c4 Implemented core functionality for new feature
+| | | * 0471b40 (origin/ft/branch, ft/branch) Implemented  test 5-cherrypicked
+| | | * 7ae5d86 Implemented test 5
+| | |/
+| | * f7980c5 updating readme
+| | * 637bfa1 updating readme
+| | * fbed584 Implemented test 5
+| |/
+
+YOGA@AJAH MINGW64 ~/gitadvanced (main)
+$ git push origin main
+Everything up-to-date
+
+YOGA@AJAH MINGW64 ~/gitadvanced (main)
+$```
