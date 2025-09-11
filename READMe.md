@@ -223,23 +223,23 @@ $ git rebase --abort
  ```
  # 6. Dropping a commit 
  ``` bash 
- $ git add unwantedtext.md && git commit -m 'Unwanted commit'
-[master 8fce026] Unwanted commit
+YOGA@AJAH MINGW64 ~/gitadvanced (main)
+$ touch unwanted.md
+
+YOGA@AJAH MINGW64 ~/gitadvanced (main)
+$  git add unwantedtext.md && git commit -m 'Unwanted commit'
+fatal: pathspec 'unwantedtext.md' did not match any files
+
+YOGA@AJAH MINGW64 ~/gitadvanced (main)
+$  git add unwantedtext.txt && git commit -m 'Unwanted commit'
+[main e33312e] Unwanted commit
  1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 unwantedtext.md
-YOGA@AJAH MINGW64 ~/gitadvanced (master)
-$ $ git reset --hard HEAD~1
-bash: $: command not found
+ create mode 100644 unwantedtext.txt
 
-YOGA@AJAH MINGW64 ~/gitadvanced (master)
-$ $ git reset --hard HEAD~1
-bash: $: command not found
-
-YOGA@AJAH MINGW64 ~/gitadvanced (master)
-$  git reset --hard HEAD~1
-HEAD is now at f3bada5 updating readme
-
-YOGA@AJAH MINGW64 ~/gitadvanced (master)
+YOGA@AJAH MINGW64 ~/gitadvanced (main)
+$ git rebase -i HEAD~4
+##locate commit and replace pick with drop
+Successfully rebased and updated refs/heads/main.
 ```
 # 7.Reordering commits
 ```bash
