@@ -120,8 +120,8 @@ Date:   Fri Sep 5 14:40:38 2025 +0200
 # 4 Splitting a commit
 ```bash YOGA@AJAH MINGW64 ~/gitadvanced (master)
 YOGA@AJAH MINGW64 ~/gitadvanced (master)
-$ git rebase -i HEAD~6
-Stopped at eed36e2...  chore: Create third and fourth files
+$ git rebase -i HEAD~4
+Stopped at 713e3f7...  chore : create third and forth file
 You can amend the commit now, with
 
   git commit --amend
@@ -130,33 +130,25 @@ Once you are satisfied with your changes, run
 
   git rebase --continue
 
-YOGA@AJAH MINGW64 ~/gitadvanced (master|REBASE 6/6)
-$ git edit HEAD^
-git: 'edit' is not a git command. See 'git --help'.
-
-The most similar command is
-        init
-
-YOGA@AJAH MINGW64 ~/gitadvanced (master|REBASE 6/6)
+YOGA@AJAH MINGW64 ~/gitadvanced (master|REBASE 4/4)
 $ git reset HEAD^
 
-YOGA@AJAH MINGW64 ~/gitadvanced (master|REBASE 6/6)
-$ git add test3.md && git commit -m 'Chore: create third file'
-[detached HEAD 44b1b9a] Chore: create third file
+YOGA@AJAH MINGW64 ~/gitadvanced (master|REBASE 4/4)
+$ git add test3.md && git commit -m 'Chore create third file'
+[detached HEAD 7b03596] Chore create third file
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 test3.md
 
-YOGA@AJAH MINGW64 ~/gitadvanced (master|REBASE 6/6)
-$ git add test4.md && git commit -m 'Chore: create four file'
-[detached HEAD 72c4b05] Chore: create four file
+YOGA@AJAH MINGW64 ~/gitadvanced (master|REBASE 4/4)
+$ git add test4.md && git commit -m 'Chore create fourth file'
+[detached HEAD 77af228] Chore create fourth file
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 test4.md
 
-YOGA@AJAH MINGW64 ~/gitadvanced (master|REBASE 6/6)
+YOGA@AJAH MINGW64 ~/gitadvanced (master|REBASE 4/4)
 $ git rebase --continue
-Successfully rebased and updated refs/heads/master.
+Successfully rebased and updated refs/heads/main.
 
-YOGA@AJAH MINGW64 ~/gitadvanced (master)
  ```
  # 5. Advanced Squashing 
  ```bash
