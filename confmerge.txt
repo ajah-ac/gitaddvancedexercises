@@ -1,1 +1,15 @@
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Conflict resolved
+=======
+=======
+>>>>>>> Stashed changes
+<<<<<<< HEAD
+mergetool to resolve conflict main branch 
+=======
+feature branch merge tool
+>>>>>>> ft/new-feature
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
