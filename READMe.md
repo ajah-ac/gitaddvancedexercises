@@ -21,6 +21,7 @@ git add test3.md && git commit -m "chore: Create third and fourth files"
 ```bash
 
 YOGA@AJAH MINGW64 ~/gitadvanced (master)
+# Check status to check for missing files
 $ git status
 On branch master
 Untracked files:
@@ -33,7 +34,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 YOGA@AJAH MINGW64 ~/gitadvanced (master)
 $ git log 
 
-
+# stage the file and commit it
 YOGA@AJAH MINGW64 ~/gitadvanced (master)
 $ git add test4.md && git commit -m 'chore:creating four file'
 [master 71c423a] chore:creating four file
@@ -644,5 +645,9 @@ HEAD is now at 056e46a Updating readme
 
 YOGA@AJAH MINGW64 ~/gitadvanced ((056e46a...))
 ```
+# Part 3:Advanced Workflows
+# 1.Stashing changes:Stashing current changes in main using git stash
+```bash
+
 
 
