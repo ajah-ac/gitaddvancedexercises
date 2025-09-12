@@ -1,1 +1,1 @@
-mergetool to resolve conflict main branch 
+Conflict resolved
