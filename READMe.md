@@ -732,6 +732,12 @@ $ git add confmerge.txt && git commit -m 'Conflict resolved'
 
 # 4.Resolving using mergetool
 ```bash
+#Start out by configuring the mergetool/
+YOGA@AJAH MINGW64 ~/gitadvanced (main)
+$ git config --global merge.tool vscode
+git config --global mergetool.vscode.cmd "code --wait --merge $REMOTE $LOCAL $BASE $MERGED"
+
+#merge a feature branch to main
 YOGA@AJAH MINGW64 ~/gitadvanced (main)
 $ git merge ft/new-feature
 Auto-merging confmerge.txt
@@ -754,15 +760,75 @@ YOGA@AJAH MINGW64 ~/gitadvanced (main|MERGING)
 $ git commit -m 'Resolved using merge tool
 > '
 [main 2a80b4f] Resolved using merge tool
-
+#Since the extra files from mergetool are still available ,remove them
 YOGA@AJAH MINGW64 ~/gitadvanced (main)
 $ git clean -f
 Removing confmerge_BACKUP_2331.txt
 Removing confmerge_BASE_2331.txt
 Removing confmerge_LOCAL_2331.txt
 Removing confmerge_REMOTE_2331.txt
-Removing test5.md
+```
+# 5. Understanding detached head state
+```bash
+#find the commit hash the repository commit history
+YOGA@AJAH MINGW64 ~/gitadvanced (main)
+$ git log --oneline
+c101764 (HEAD -> main) merge tool main
+#use the commit hash to go the commit directly without being on a specific branch
+YOGA@AJAH MINGW64 ~/gitadvanced (main)
+$ git checkout c101764
+Note: switching to 'c101764'.
 
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
 
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
 
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at c101764 merge tool main
+
+YOGA@AJAH MINGW64 ~/gitadvanced ((c101764...))
+$
+```
+# 6.Ignoring files/directories
+```bash 
+#.gitignore allows git to not track 
+# add the .gitignore file
+YOGA@AJAH MINGW64 ~/gitadvanced (main)
+$ touch .gitignore
+# add /tmp inside .gitignore file
+#stage and commit .gitignore
+YOGA@AJAH MINGW64 ~/gitadvanced (main)
+$ git add .gitignore && git commit -m "Add types of files to ignore"
+[main 68d580c] Add types of files to ignore
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+ ```
+# 7.Working with tags
+```bash
+#creating a tag
+YOGA@AJAH MINGW64 ~/gitadvanced (main)
+$ git tag v1.0
+```
+# 8.Listing and deleting tags
+```bash
+#git tag -lists all exidting tags
+YOGA@AJAH MINGW64 ~/gitadvanced (main)
+$ git tag
+v1.0
+# to delete all tags use git tag -d <tagname>
+YOGA@AJAH MINGW64 ~/gitadvanced (main)
+$ git tag -d v1.0
+Deleted tag 'v1.0' (was 68d580c)
+```
+# 9.Pushing Local Work to Remote Repositories:
 
